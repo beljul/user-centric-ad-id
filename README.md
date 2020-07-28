@@ -20,9 +20,8 @@ With these in mind, the following principles guide our design:
 * transparency and auditability: users choices enforceability and respect should be ensured.
 
 
-Several designs were studied to enforce those principles.
+Several designs were studied to enforce those principles. Each comes with its own way of storing the user identifier and its own pros and cons:
 
-Each design comes with its own way of storing the user identifier and its own pros and cons:
 | Design options  | Identifier storage location | Description | Pros | Cons |
 |---|---|---|---|---|
 | #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Smooth user browsing experience</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear separation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
