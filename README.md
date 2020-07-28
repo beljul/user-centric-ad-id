@@ -86,6 +86,8 @@ Workflows differ from one another in terms of:
 
 Each network participant is free to choose which workflow(s) to implement on its website.
 
+#### Description of each workflow
+
 <details>
   <summary>Workflow #1: user is not authenticated on network participant and is not authenticated on the Network Controller</summary>
 
