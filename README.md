@@ -8,17 +8,21 @@ This proposal for a user-centric advertising network, adopts the viewpoint that 
 ## Design Principles
 We propose a design which grants full and easy control to the user to manage a revocable, enforceable and auditable online privacy profile.
 
-As of today, identity management and resolution is decentralized across advertisers, publishers and tech vendors. This decentralization generates friction with end users when it comes to personalized advertising because the latter neither understand its value nor feel in controls of it. 
+Our thinking is guided by 3 acknowledgements : 
+1/ As of today, online identity management is decentralized ; meaning each advertiser, publishers or tech vendor can create its own identity space, tying web browsers to an anonymous identifier that follows its own logic and rules. This fragmentation of identifiers generates friction with end users when it comes to personalized advertising ; the latter being unable to easily detach itself from the variety of identifiers that her web browsing could have been attached to nor being able to get a perspective about its digital footprint. Fragmentation is creating obfuscation.
+2/ Although the identifiers are decentralized ; it remains possible to stitch these identifiers together and build rich web browsing profiles. Privacy issues are due to identifiers being leaked but more so because of the  the personal nature and amount of such information that is exposed. It's the data that counts.
+3/ There is no unique view of what constitutes privacy-safe browsing experience. Users preferences vary in the way they judge what is and what is not acceptable to them. Give them voice and choice.
 
-That's why the following principles guide our design:
-* centralization of user privacy preferences: the users’ privacy profile is cross-browser/device/environment/OS,
-* ubiquity for accessing & altering user preferences: any and every online touchpoint can provide controls for users to manage their preferences,
-* auditability: in the way user data is managed by vendors,
-* limitation of purpose: the identifier is dedicated to advertising use case and should not be used for any other purpose (say as a login to a social media app) which ensures clean separation of data used for advertising purposes with those leveraged to power other types of online services.
+Witht these in mind, the following principles guide our design:
+* centralization of user privacy preferences: the users’ privacy profile should be cross-browser/device/environment/OS,
+* limitation of purpose: identifier used for advertising use should not be the same as ones used for other purposes (say as a login to B2C services),
+* ubiquity for accessing & altering user preferences: any and every online touchpoint should offer controls for users to manage their preferences,
+* transparency and auditability: users choices enforceability should be ensured.
 
-Multiple designs were studied to enforce those principles, all of them relying on a unique identifier representing the end user.
 
-Nonetheless, each design has i) its own way of storing the user identifier and ii) its own pros and cons:
+Several designs were studied to enforce those principles.
+
+Each design comes with i) its own way of storing the user identifier and ii) its own pros and cons:
 | Design options  | Identifier storage location | Description | Pros | Cons |
 |---|---|---|---|---|
 | #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Great user experience for end-users</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear limitation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
