@@ -13,11 +13,10 @@ We propose a design which grants full and easy control to the user to manage a r
 As of today, identity management and resolution is decentralized and generates fragmentation of the user data and lack of controls. 
 
 As such, the following principles guide our design:
-
-Centralization of user privacy preferences: the users’ privacy profile is cross-browser/device/environment/OS.
-Ubiquity for accessing & altering user preferences: any and every online touchpoint can provide controls for users to manage their preferences.
-Auditability: in the way user data is managed by vendors.
-Limitation of purpose: the identifier is dedicated to advertising use case and should not be used for any other purpose (say as a login to a social media app) which ensures clean separation of data used for advertising purposes with those leveraged to power other types of online services.
+* centralization of user privacy preferences: the users’ privacy profile is cross-browser/device/environment/OS,
+* ubiquity for accessing & altering user preferences: any and every online touchpoint can provide controls for users to manage their preferences,
+* auditability: in the way user data is managed by vendors,
+* limitation of purpose: the identifier is dedicated to advertising use case and should not be used for any other purpose (say as a login to a social media app) which ensures clean separation of data used for advertising purposes with those leveraged to power other types of online services.
 
 Multiple designs were studied to enforce those principles, all of them relying on a unique identifier representing the end user.
 
@@ -122,17 +121,86 @@ If the user accepts, then a first-party cookie with the IFA is created and store
 ![workflow_1_pub](https://user-images.githubusercontent.com/4519242/88651749-4ce0e600-d0ca-11ea-8a20-71745a50b6ca.png)
 
 #### Workflow 2: User is not authenticated on network participant and is authenticated on the Network Controller
+<ins>Advertiser side</ins>:
+Suppose a user is a visitor of my-localstore.com, but choose not to have an account on this website or my-localstore.com doesn't require any authentication.
+
+When visiting my-localstore.com, the latter displays to the user a widget, freely positioned by the advertiser on its website, asking him whether he would be interested in getting personalized ads as part of my-advertising-services.com (sketch name for the website operated by the Network Controller). 
+
+If the user does not click on it, then the user continues visiting the website but will not get personalized ads from my-localstore.com.
+
+If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising from my-localstore.com.
+
+The prompt clearly states that:
+* user interest data can be collected to perform personalized advertising,
+* ad preferences can be updated at any time,
+* user may leave the program at any time.
+
+If the user accepts, then the IFA associated with her Network Controller profile is retrieved. The IFA is also passed to my-localstore.com, which can collect user interest data linked to this IFA.
+
 ![workflow_2_adv](https://user-images.githubusercontent.com/4519242/88651766-510d0380-d0ca-11ea-90bc-a2623d43db53.png)
+
+<ins>Publisher side</ins>:
+The user goes to my-news.com where he does not have an account either. Similarly to the user experience on my-localstore.com, my-news.com displays to the user a widget asking her whether she would be interested in getting personalized ads as part of my-advertising-services program. The widget is freely positioned by the publisher on its website.
+
+If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising on my-news.com.
+
+If the user accepts, then the IFA associated with her Network Controller profile is retrieved. This IFA is also passed to my-news.com, which can pass this identifier to the advertising value chain through ad bid request, enabling personalized advertising based on user interest on its property (for example, from my_localstore.com).
+
 ![workflow_2_pub](https://user-images.githubusercontent.com/4519242/88651787-5702e480-d0ca-11ea-8da0-1e61a7d4748c.png)
 
 #### Workflow 3: User is authenticated on network participant or is signing-up on network participant
+<ins>Advertiser side</ins> (example here: user is signing-up on network participant):
+Suppose a user is a regular browser of my-localstore.com, and is creating an account on this website. This workflow is integrated with the existing authentication on the website (either their own and/or an SSO).
+
+During the sign-up process on my-localstore.com, the user gets a prompt to accept personalized advertising with my-advertising-services.com program (sketch name for the website operated by the Network Controller).
+
+The prompt clearly states that:
+* user interest data can be collected to perform personalized advertising,
+* ad preferences can be updated at any time,
+* user may leave the program at any time.
+
+The user chooses to join the program. An IFA linked to the user email address is created and stored by the Network Controller. This IFA is passed to my-localstore.com's DSP, which can collect user interest data linked to this IFA.
+
 ![workflow_3_adv](https://user-images.githubusercontent.com/4519242/88651823-6124e300-d0ca-11ea-8032-ed1ce92d2dfc.png)
+
+<ins>Publisher side</ins> (example here: user is already authenticated on network participant):
+The user goes to my-news.com, and has already an account on this website.
+
+The user being already signed on my-news.com, my-news.com sends a request to the Network Controller, asking whether the user has already joined my-advertising-services.com. 
+
+Answer is yes and the user gets a prompt asking whether she authorizes user interest data collection and personalized advertising from my-advertising-services.com on my-news.com.
+
+The user chooses to agree, and the IFA linked to the user email address that is shared by the Network Controller to my-news.com.
+
+my-news.com can pass this identifier to advertisers through ad bid request, enabling personalized advertising based on user interest on its property.
+
 ![workflow_3_pub](https://user-images.githubusercontent.com/4519242/88651836-65510080-d0ca-11ea-8d86-fcb6813ac12c.png)
 
 #### Coexistence of workflows in the Network
+Since each network participant is free to choose which workflow(s) to implement on its website, we foresee the coexistence of all those workflows in the Network. 
+
+The following tab describes the capacity of two workflows to enable identity resolution between an advertiser and a publisher when the are implemented respectively on each one:
+| Workflow ID | Advertiser | Publisher | ID controller | Personalized advertising |
+|---|---|---|---|---|
+| #1 | is logged in and has consented | is logged in and has consented | / | Enabled |
+| #2 | is logged in and has consented | is logged in and has NOT consented  | /  | Disabled  |
+| #3 | is logged in and has NOT consented | is logged in and has consented  | /  | Disabled  |
+| #4 | is logged in and has consented | has consented through redirection to ID controller  | is logged in | Enabled  |
+| #5 | is logged in and has consented | has consented through redirection to ID controller | is NOT logged in | Disabled |
+| #6 | has consented through redirection to ID controller | is logged in and has consented | is NOT logged in | Disabled |
+| #7 | has consented through redirection to ID controller | has consented through redirection to ID controller | is NOT logged in | Enabled  |
 
 ### User consent, transparency and controls
+Each network participant is responsible to collect the consent for user interest data collection and personalized advertising on their web domains. The network participant can choose at which rate the prompt to join my-advertising-services.com should be displayed to the user, preventing user fatigue, or can even include an option "don't ask me again". Once a user has agreed to user interest data collection and personalized advertising on a network participant property, the consent is valid until revoked by that same user.
 
+The network provides additional transparency to users on my-advertising-services.com. In particular, users can review there at any time for which websites they have agreed to user interest data collection and personalized advertising. We can also imagine additional features on my-advertising-services.com, for instance the visualization of user interest data that has been collected by DSP participants under their IFA on the Network Controller website.
+
+The network provides controls to the user on my-advertising-services.com:
+* users can choose independently for each network participant whether or not to agree to user interest data collection and personalized advertising. If the user does not consent, the IFA is not shared with the participant,
+* users can withdraw their consent to specific websites or all of them on my-advertising-services.com,
+* users can sever the link between their IFA and their email address on my-advertising-services.com, severing the link between their identity and any user interest data that has been collected.
+
+Here is an example of UI on the Network Controller website describing these controls and transparency proposals: 
 ![controls](https://user-images.githubusercontent.com/4519242/88651704-3fc3f700-d0ca-11ea-889c-61ada07e345a.png)
 
 ## Benefits
@@ -167,5 +235,3 @@ This body should be in charge of overseeing the Network Controller operation:
 * the Network Controller is the keeper of the user IFA and ads preferences.. It should be trusted by users and network participants,
 * the Network Controller itself could be owned by tech companies likecloud providers,
 * network Controller could be freely audited.
-
-## Additional considerations
