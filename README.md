@@ -1,37 +1,37 @@
 # User centric advertising network
 
 ## Introduction
-Personalized advertising aims at fostering users' awareness of brands, products and services that match their interests in ways that foster positive engagement and brand recognition — By funding content providers and publishers, personalized advertising enables free access to content and services ranging from social media platforms to news, investigation journalism or weather forecasts. As of today, it is impractical for users to assess how the media they consume is brought to them and to what extent this consumption comes at odds or not with their privacy preferences. 
+Personalized advertising aims at fostering users' awareness of brands, products and services that match their interests in ways that cultivate positive engagement and brand recognition. By funding content providers and publishers, personalized advertising enables free access to a wide and varied array of content and services ranging from social media platforms to news, investigation journalism or weather forecasts. As of today, it is impractical for users to assess how the media they consume is brought to them and to what extent this consumption comes at odds or not with their privacy preferences. 
 
-This proposal for a user-centric advertising network, adopts the viewpoint that users should benefit from a vast, open and mostly free internet ecosystem in ways that cater to their individual preferences in terms of level of personalized services they seek to enjoy online, from each of the businesses they engage with.
+This proposal for a user-centric advertising network, adopts the viewpoint that users should benefit from a vast, open and mostly free internet ecosystem in ways that cater to their individual preferences in terms of level of personalized interactions they seek to enjoy online, from each of the businesses they engage with.
 
 ## Design Principles
-We propose a design which grants full and easy control to the user to manage a revocable, enforceable and auditable online privacy profile.
+We propose a design which grants full and easy control to the user to manage a revocable and editable privacy profile, with confidence their preferences are acted. upon.
 
 Our thinking is guided by 3 acknowledgements : 
-1/ As of today, online identity management is decentralized ; meaning each advertiser, publishers or tech vendor can create its own identity space, tying web browsers to an anonymous identifier that follows its own logic and rules. This fragmentation of identifiers generates friction with end users when it comes to personalized advertising ; the latter being unable to easily detach itself from the variety of identifiers that her web browsing could have been attached to nor being able to get a perspective about its digital footprint. Fragmentation is creating obfuscation.
-2/ Although the identifiers are decentralized ; it remains possible to stitch these identifiers together and build rich web browsing profiles. Privacy issues are due to identifiers being leaked but more so because of the  the personal nature and amount of such information that is exposed. It's the data that counts.
-3/ There is no unique view of what constitutes privacy-safe browsing experience. Users preferences vary in the way they judge what is and what is not acceptable to them. Give them voice and choice.
+1/ As of today, online identity management is decentralized ; meaning each advertiser, publishers or tech vendor can create its own identity space, tying web browsing systems to anonymous identifiers. This fragmentation of identifiers generates friction with end users when it comes to personalized advertising, the users being unable to easily detach themselves from the array of identifiers that their web browsing could have been attached to nor are they able to get a perspective about their digital footprint. Fragmentation is creating obfuscation.
+2/ Although the identifiers are decentralized ; these identifiers can be stitched together and lead to the creation of rich web browsing profiles. Privacy issues do not come from identifiers being leaked but do arise when personal information or information that can create harm to its owner is exposed. It's the data that counts not the identifier.
+3/ There is no unique view of what constitutes privacy-safe browsing experience. Users preferences vary in the way each judge what is and what is not acceptable service. Users should be granted voice and choice about how they seek to enjoy their online activity.
 
-Witht these in mind, the following principles guide our design:
+With these in mind, the following principles guide our design:
 * centralization of user privacy preferences: the users’ privacy profile should be cross-browser/device/environment/OS,
-* limitation of purpose: identifier used for advertising use should not be the same as ones used for other purposes (say as a login to B2C services),
-* ubiquity for accessing & altering user preferences: any and every online touchpoint should offer controls for users to manage their preferences,
-* transparency and auditability: users choices enforceability should be ensured.
+* separation of purpose: identifier used for advertising use should not be the same as ones used for other purposes (say as a login to B2C services),
+* ubiquity for accessing & altering user preferences: users should be one click away to be able manage their preferences,
+* transparency and auditability: users choices enforceability and respect should be ensured.
 
 
 Several designs were studied to enforce those principles.
 
-Each design comes with i) its own way of storing the user identifier and ii) its own pros and cons:
+Each design comes with its own way of storing the user identifier and its own pros and cons:
 | Design options  | Identifier storage location | Description | Pros | Cons |
 |---|---|---|---|---|
-| #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Great user experience for end-users</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear limitation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
-| #2 | Browser | Identifier is generated, stored and shared by browsers which acts as brokers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Auditability</li><li>Great user experience for end-users</li></ul> | <ul><li>None</li></ul> |
-| #3 | Browser plugin | Identifier is generated, stored and shared by a browser's plugin installed manually by the end user | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Great user experience for end-users</li><li>Auditability</li></ul> | <ul><li>Capacity to scale (require plugin-install)</li></ul> |
-| #4 | Identity providers | Identifier is generated, stored and shared by Identity Providers and is linked to PII | <ul><li>Great user experience for end-users</li><li>Clear limitation of purpose</li><li>Auditability</li></ul> | <ul><li>Support required from all identity providers to manage an Identifier</li><li>Requirement for advertisers/publishers to adopt SSOs as login provider</li><li>Capacity to scale (PII-only)</li></ul> |
-| #5 | Third-party entity | Identifier is generated and stored by a third-party independent entity at user sign-up time or consent time and can be shared across advertisers, publishers and tech vendors upon user choice | <ul><li>Centralization of user privacy preferences</li><li>Ubiquity for accessing & altering user preferences</li><li>Clear limitation of purpose</li><li>Auditability</li></ul> | <ul><li>Lesser user experience</li></ul> |
+| #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Smooth user browsing experience</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear separation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
+| #2 | Browser | Identifier is created, stored and shared by browsers which acts as brokers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Clear separation of purpose</li><li>Auditability</li><li>Smooth user browsing experience</li></ul> | <ul><li>None</li></ul> |
+| #3 | Browser plugin | Identifier is created, stored and shared by a browser's plugin installed manually by the end user | <ul><li>Centralization of user privacy preferences</li><li>Clear separation of purpose</li><li>Smooth user browsing experience</li><li>Auditability</li></ul> | <ul><li>Capacity to scale (require plugin-install)</li></ul> |
+| #4 | Identity providers | Identifier is created, stored and shared by Identity Providers and is linked to PII | <ul><li>Smooth user browsing experience</li><li>Clear separation of purpose</li><li>Auditability</li></ul> | <ul><li>Support required from all identity providers to manage an Identifier</li><li>Requirement for advertisers/publishers to adopt SSOs as login provider</li><li>Capacity to scale (PII-only)</li></ul> |
+| #5 | Third-party entity | Identifier is created and stored by a third-party independent entity at user sign-up time or consent time. Identifier can be shared across advertisers, publishers and tech vendors upon user choice | <ul><li>Centralization of user privacy preferences</li><li>Ubiquity for accessing & altering user preferences</li><li>Clear separation of purpose</li><li>Auditability</li></ul> | <ul><li>Lesser user experience</li></ul> |
 
-Options 1, 3 and 4 seems difficult to scale ; and option 2, although the most elegant, requires endorsement from browser vendors which is uncertain. Therefore are t we will detail option 5 in the following proposal.
+Options 1, 3 and 4 seem difficult to scale ; option 2, although most elegant, requires endorsement from browser vendors which is uncertain at present time. Therefore, we will detail option 5 in the following proposal.
 
 ## Proposal
 We introduce:
