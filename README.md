@@ -230,6 +230,6 @@ This body should be in charge of defining the network policy:
 * definition of shared audience categories.
 
 This body should be in charge of overseeing the Network Controller operation:
-* the Network Controller is the keeper of the user IFA and ads preferences.. It should be trusted by users and network participants,
-* the Network Controller itself could be owned by tech companies likecloud providers,
+* the Network Controller is the keeper of the user IFA and ads preferences. It should be trusted by users and network participants,
+* the Network Controller itself could be owned by tech companies like cloud providers,
 * network Controller could be freely audited.
