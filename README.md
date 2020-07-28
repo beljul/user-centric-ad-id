@@ -63,7 +63,7 @@ End users can create an account on the Network Controller and access the followi
 
 The Network Controller also provides the following services to network participants:
 * enabling cross-domain user identification for advertising through the IFA if the ad preferences allow it,
-* reading the other ad preferences that apply to their website.
+* reading the ad preferences that apply to their website.
 
 ### User workflows
 This section aims at describing user workflows on publishers and advertisers that are participants of the network to enable identity resolution and personalized advertising.
