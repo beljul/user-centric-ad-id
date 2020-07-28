@@ -202,7 +202,7 @@ The following tab describes the capacity of two workflows to enable identity res
 ### User consent, transparency and controls
 Each network participant is responsible to collect the consent for user interest data collection and personalized advertising on their web domains. The network participant can choose at which rate the prompt to join the program should be displayed to the user, preventing user fatigue, or can even include an option "don't ask me again". Once a user has agreed to user interest data collection and personalized advertising on a network participant property, the consent is valid until revoked by that same user.
 
-The network provides additional transparency to users on the portal my-advertising-services.com. In particular, users can review there at any time for which websites they have agreed to user interest data collection and personalized advertising. We can also imagine additional features on my-advertising-services.com, for instance the visualization of user interest data that has been collected by DSP participants under their IFA on the Network Controller website.
+The network provides additional transparency to users on the portal my-advertising-services.com. In particular, users can review there at any time for which websites they have agreed to user interest data collection and personalized advertising.
 
 The network provides controls to the user via the portal my-advertising-services.com:
 * users can choose independently for each network participant whether or not to agree to user interest data collection and personalized advertising. If the user does not consent, the IFA is not shared with the participant,
@@ -212,11 +212,10 @@ The network provides controls to the user via the portal my-advertising-services
 
 ## Benefits
 Users, first and foremost, are in control of their advertising experience:
-* user choice is enforced: consent is explicit, granular covering all users concerns (network websites, type of ads and type of content),
-* users haveevisibility on their privacy profile, in a centralized manner for all network websites,
-* users can revoke their IFA at any time, severing the link between their identity and interest data previously collected by all network participants,
-* a consistent and transparent user experience where authentication & collection happens at the point of user interaction,
-* users are in control of their IFA: Network participants will be prohibited to use an IFA for linking with other online user identities.
+* user choice is enforced: consent is explicit, and can be made very granular relying on TCF framework for a start but which could also be extended,
+* users have visibility and control on their privacy profile, in a centralized manner for all network websites,
+* users will be able to renew their online profile (revoking their IFA) at any time, severing the link between their identity and interest data previously collected by all network participants,
+* users will have a consistent and transparent user experience where authentication & collection happens at the point of user interaction,
 
 Publishers can optimize their inventory by monetizing access to their audience through personalized advertising:
 * publishers increase their advertising revenue, by combining their own audience data with collected user interest data,
