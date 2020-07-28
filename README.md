@@ -29,9 +29,9 @@ Nonetheless, each design has i) its own way of storing the user identifier and i
 
 Options 1, 3 and 4 seems difficult to scale and are therefore not detailed in this proposal.
 
-Even if option 2 has both significant alignements with our design principles, they require strong support from browser vendors which is uncertain at this time.
+Even if option 2 has both significant alignement with our design principles, it requires strong support from browser vendors which is uncertain at this time.
 
-So, in the mean time, we believe that option 5 is a valuable option worth investigating and we will focus on it in the following proposal.
+So, in the mean time, we believe that option 5 is a valuable option and we will focus on it in the following proposal.
 ## Proposal
 We introduce:
 * a revocable user identifier called Identifier For Advertising,
