@@ -201,11 +201,11 @@ The following tab describes the capacity of two workflows to enable identity res
 | #7 | has consented through redirection to ID controller | has consented through redirection to ID controller | is NOT authenticated | Enabled  |
 
 ### User consent, transparency and controls
-Each network participant is responsible to collect the consent for user interest data collection and personalized advertising on their web domains. The network participant can choose at which rate the prompt to join my-advertising-services.com should be displayed to the user, preventing user fatigue, or can even include an option "don't ask me again". Once a user has agreed to user interest data collection and personalized advertising on a network participant property, the consent is valid until revoked by that same user.
+Each network participant is responsible to collect the consent for user interest data collection and personalized advertising on their web domains. The network participant can choose at which rate the prompt to join the program should be displayed to the user, preventing user fatigue, or can even include an option "don't ask me again". Once a user has agreed to user interest data collection and personalized advertising on a network participant property, the consent is valid until revoked by that same user.
 
-The network provides additional transparency to users on my-advertising-services.com. In particular, users can review there at any time for which websites they have agreed to user interest data collection and personalized advertising. We can also imagine additional features on my-advertising-services.com, for instance the visualization of user interest data that has been collected by DSP participants under their IFA on the Network Controller website.
+The network provides additional transparency to users on the portal my-advertising-services.com. In particular, users can review there at any time for which websites they have agreed to user interest data collection and personalized advertising. We can also imagine additional features on my-advertising-services.com, for instance the visualization of user interest data that has been collected by DSP participants under their IFA on the Network Controller website.
 
-The network provides controls to the user on my-advertising-services.com:
+The network provides controls to the user via the portal my-advertising-services.com:
 * users can choose independently for each network participant whether or not to agree to user interest data collection and personalized advertising. If the user does not consent, the IFA is not shared with the participant,
 * users can withdraw their consent to specific websites or all of them on my-advertising-services.com,
 * users can sever the link between their IFA and their email address on my-advertising-services.com, severing the link between their identity and any user interest data that has been collected.
@@ -214,22 +214,21 @@ The network provides controls to the user on my-advertising-services.com:
 ## Benefits
 Users, first and foremost, are in control of their advertising experience:
 * user choice is enforced: consent is explicit, granular covering all users concerns (network websites, type of ads and type of content),
-* users are in control of their consent, in a centralized manner for all network websites,
+* users haveevisibility on their privacy profile, in a centralized manner for all network websites,
 * users can revoke their IFA at any time, severing the link between their identity and interest data previously collected by all network participants,
-* transparency: users can review interest data that has been collected,
 * a consistent and transparent user experience where authentication & collection happens at the point of user interaction,
 * users are in control of their IFA: Network participants will be prohibited to use an IFA for linking with other online user identities.
 
 Publishers can optimize their inventory by monetizing access to their audience through personalized advertising:
 * publishers increase their advertising revenue, by combining their own audience data with collected user interest data,
-* publishers decide with whom they share the identifier among the SSPs of the network, enabling them to monetize their own user data, if they choose to, without risking data leakage,
-* the management and collection of consent for each publisher is taken care of by the Network Controller,
+* publishers decide with whom they share the identifier among the SSPs of the network, enabling them to monetize their own user data (tied to a user login for instance), if they choose to, without risking data leakage,
+* the management and collection of consent for each publisher is taken care of by the Network Controller, publishers can rely on their CMP to ensure user choices are effectively acted upon in the advertising value chain
 * publishers can control whether or not to share an IFA for an ad placement, and choose which part of their inventory will benefit from the IFA or not.
 
 Advertisers are able to engage with users in a personalized fashion:
 * advertisers can target users based on their individual interest data and propose products people like,
 * advertisers can manage ad frequency through all publishers within the network, preventing user fatigue,
-* advertisers can get unified measurement at scale, enabling them to apply their advertising strategy within the network.
+* advertisers can get unified measurement at scale, enabling them to prevent fraud and deliver their advertising message with confidence within the network.
 
 ## About the Network Governance
 The network should have a governance body, which could be an existing industry consortium or a newly created body.
@@ -240,5 +239,5 @@ This body should be in charge of defining the network policy:
 
 This body should be in charge of overseeing the Network Controller operation:
 * the Network Controller is the keeper of the user IFA and ads preferences. It should be trusted by users and network participants,
-* the Network Controller itself could be owned by tech companies like cloud providers,
-* network Controller could be freely audited.
+* the Network Controller itself could be operated by companies like cloud providers,
+* the Network Controller should be freely auditable.
