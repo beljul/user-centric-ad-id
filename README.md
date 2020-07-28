@@ -122,7 +122,7 @@ Each network participant is free to choose which workflow(s) to implement on its
 </details>
 
 <details>
-<summary>Workflow #2: User is not authenticated on network participant and is authenticated on the Network Controller</summary>
+<summary>Workflow #2: user is not authenticated on network participant and is authenticated on the Network Controller</summary>
   
   <ins>Advertiser side</ins>:
   Suppose a user is a visitor of my-localstore.com, but choose not to have an account on this website or my-localstore.com doesn't require any authentication.
@@ -153,7 +153,7 @@ Each network participant is free to choose which workflow(s) to implement on its
 </details>
 
 <details>
-<summary>Workflow #3: User is authenticated on network participant or is signing-up on network participant</summary>
+<summary>Workflow #3: user is authenticated on network participant or is signing-up on network participant</summary>
   
   <ins>Advertiser side</ins> (example here: user is signing-up on network participant):
   Suppose a user is a regular browser of my-localstore.com, and is creating an account on this website. This workflow is integrated with the existing authentication on the website (either their own and/or an SSO).
