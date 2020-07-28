@@ -211,7 +211,7 @@ The network provides controls to the user on my-advertising-services.com:
 
 
 ## Benefits
-Users, first and foremost, are in control of her advertising experience:
+Users, first and foremost, are in control of their advertising experience:
 * user choice is enforced: consent is explicit, granular covering all users concerns (network websites, type of ads and type of content),
 * users are in control of their consent, in a centralized manner for all network websites,
 * users can revoke their IFA at any time, severing the link between their identity and interest data previously collected by all network participants,
