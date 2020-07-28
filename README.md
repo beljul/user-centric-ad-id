@@ -10,9 +10,7 @@ This document presents a proposal for a user-centric advertising network that ma
 ## Design Principles
 We propose a design which grants full and easy control to the user to manage a revocable, enforceable and auditable online privacy profile.
 
-As of today, identity management and resolution is decentralized and generates fragmentation of the user data and lack of controls. 
-
-As such, the following principles guide our design:
+As of today, identity management and resolution is decentralized across advertisers, publishers and tech vendors. This decentralization generates friction with end users when it comes to personalized advertising because the latter neither understand its value nor feel in controls of it. That's why the following principles guide our design:
 * centralization of user privacy preferences: the users’ privacy profile is cross-browser/device/environment/OS,
 * ubiquity for accessing & altering user preferences: any and every online touchpoint can provide controls for users to manage their preferences,
 * auditability: in the way user data is managed by vendors,
@@ -20,18 +18,18 @@ As such, the following principles guide our design:
 
 Multiple designs were studied to enforce those principles, all of them relying on a unique identifier representing the end user.
 
-Nonetheless, each design has i) its own way of storing the user identifier and ii) pros and cons:
+Nonetheless, each design has i) its own way of storing the user identifier and ii) its own pros and cons:
 | Design options  | Identifier storage location | Description | Pros | Cons |
 |---|---|---|---|---|
-| #1 | Browser | Identifier is generated, stored and shared by browsers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Auditability</li><li>Great user experience for end-users</li></ul> | <ul><li>Require support from all browser vendors to manage an Identifier</li></ul> |
-| #2 | Browser plugin | Identifier is generated, stored and shared by a browser's plugin installed manually by the end user | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Great user experience for end-users</li><li>Auditability</li></ul> | <ul><li>Capacity to scale (require plugin-install)</li></ul> |
-| #3 (current state) | Advertiser/Publisher/Vendors | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Great user experience for end-users</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear limitation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
+| #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Great user experience for end-users</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear limitation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
+| #2 | Browser | Identifier is generated, stored and shared by browsers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Auditability</li><li>Great user experience for end-users</li></ul> | <ul><li>Require support from all browser vendors to manage an Identifier</li></ul> |
+| #3 | Browser plugin | Identifier is generated, stored and shared by a browser's plugin installed manually by the end user | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Great user experience for end-users</li><li>Auditability</li></ul> | <ul><li>Capacity to scale (require plugin-install)</li></ul> |
 | #4 | Identity providers | Identifier is generated, stored and shared by Identity Providers and is linked to PII | <ul><li>Great user experience for end-users</li><li>Clear limitation of purpose</li><li>Auditability</li></ul> | <ul><li>Requirement support from all identity providers to manage an Identifier</li><li>Requirement for advertisers/publishers to adopt SSOs as login provider</li><li>Capacity to scale (PII-only)</li></ul> |
 | #5 | Third-party entity | Identifier is generated and stored by a third-party independent entity at user sign-up time or consent time and is shared across advertisers, publishers and tech vendors | <ul><li>Centralization of user privacy preferences</li><li>Ubiquity for accessing & altering user preferences</li><li>Clear limitation of purpose</li><li>Auditability</li></ul> | <ul><li>User experience</li></ul> |
 
-Options 2, 3 and 4 seems difficult to scale and are therefore not detailed in this proposal.
+Options 1, 3 and 4 seems difficult to scale and are therefore not detailed in this proposal.
 
-Even if option 1 has both significant alignements with our design principles, they require strong support from browser vendors which is uncertain at this time.
+Even if option 2 has both significant alignements with our design principles, they require strong support from browser vendors which is uncertain at this time.
 
 So, in the mean time, we believe that option 5 is a valuable option worth investigating and focus the rest of the document on it.
 ## Proposal
