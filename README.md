@@ -60,7 +60,7 @@ The Network Controller is an independent entity.
 End users can create an account on the Network Controller and access the following services :
 * revoking IFA upon request,
 * reviewing and updating their ad preferences, 
-* providing a portal to review user data collected by Network participants.
+* providing a portal to review user data collected by Network participants (referred to as my-advertising-services.com below).
 
 The Network Controller also provides the following services to network participants:
 * enabling cross-domain user identification for advertising through the IFA if the ad preferences allow it,
