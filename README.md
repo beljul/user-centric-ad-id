@@ -236,7 +236,6 @@ The network should have a governance body, which could be an existing industry c
 This body should be in charge of defining the network policy:
 * network participantship rules: access to participantship should not be open for advertisers or publishers operating website linked to sensitive information, or unsafe product categories,
 * obligations of network participants: minimum level of user controls and transparency provided,
-* definition of shared audience categories.
 
 This body should be in charge of overseeing the Network Controller operation:
 * the Network Controller is the keeper of the user IFA and ads preferences. It should be trusted by users and network participants,
