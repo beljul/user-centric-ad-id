@@ -191,13 +191,13 @@ Since each network participant is free to choose which workflow(s) to implement 
 The following tab describes the capacity of two workflows to enable identity resolution between an advertiser and a publisher when the are implemented respectively on each one:
 | Workflow ID | Advertiser | Publisher | ID controller | Personalized advertising |
 |---|---|---|---|---|
-| #1 | is logged in and has consented | is logged in and has consented | / | Enabled |
-| #2 | is logged in and has consented | is logged in and has NOT consented  | /  | Disabled  |
-| #3 | is logged in and has NOT consented | is logged in and has consented  | /  | Disabled  |
-| #4 | is logged in and has consented | has consented through redirection to ID controller  | is logged in | Enabled  |
-| #5 | is logged in and has consented | has consented through redirection to ID controller | is NOT logged in | Disabled |
-| #6 | has consented through redirection to ID controller | is logged in and has consented | is NOT logged in | Disabled |
-| #7 | has consented through redirection to ID controller | has consented through redirection to ID controller | is NOT logged in | Enabled  |
+| #1 | is authenticated in and has consented | is authenticated in and has consented | / | Enabled |
+| #2 | is authenticated in and has consented | is authenticated in and has NOT consented  | /  | Disabled  |
+| #3 | is authenticated in and has NOT consented | is authenticated in and has consented  | /  | Disabled  |
+| #4 | is authenticated in and has consented | has consented through redirection to ID controller  | is authenticated in | Enabled  |
+| #5 | is lauthenticated in and has consented | has consented through redirection to ID controller | is NOT authenticated in | Disabled |
+| #6 | has consented through redirection to ID controller | is authenticated in and has consented | is NOT authenticated in | Disabled |
+| #7 | has consented through redirection to ID controller | has consented through redirection to ID controller | is NOT authenticated in | Enabled  |
 
 ### User consent, transparency and controls
 Each network participant is responsible to collect the consent for user interest data collection and personalized advertising on their web domains. The network participant can choose at which rate the prompt to join my-advertising-services.com should be displayed to the user, preventing user fatigue, or can even include an option "don't ask me again". Once a user has agreed to user interest data collection and personalized advertising on a network participant property, the consent is valid until revoked by that same user.
