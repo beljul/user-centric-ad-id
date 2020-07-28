@@ -26,16 +26,13 @@ Each design comes with i) its own way of storing the user identifier and ii) its
 | Design options  | Identifier storage location | Description | Pros | Cons |
 |---|---|---|---|---|
 | #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Great user experience for end-users</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear limitation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
-| #2 | Browser | Identifier is generated, stored and shared by browsers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Auditability</li><li>Great user experience for end-users</li></ul> | <ul><li>Require support from all browser vendors to manage an Identifier</li></ul> |
+| #2 | Browser | Identifier is generated, stored and shared by browsers which acts as brokers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Auditability</li><li>Great user experience for end-users</li></ul> | <ul><li>None</li></ul> |
 | #3 | Browser plugin | Identifier is generated, stored and shared by a browser's plugin installed manually by the end user | <ul><li>Centralization of user privacy preferences</li><li>Limitation of purpose</li><li>Great user experience for end-users</li><li>Auditability</li></ul> | <ul><li>Capacity to scale (require plugin-install)</li></ul> |
 | #4 | Identity providers | Identifier is generated, stored and shared by Identity Providers and is linked to PII | <ul><li>Great user experience for end-users</li><li>Clear limitation of purpose</li><li>Auditability</li></ul> | <ul><li>Support required from all identity providers to manage an Identifier</li><li>Requirement for advertisers/publishers to adopt SSOs as login provider</li><li>Capacity to scale (PII-only)</li></ul> |
-| #5 | Third-party entity | Identifier is generated and stored by a third-party independent entity at user sign-up time or consent time and is shared across advertisers, publishers and tech vendors | <ul><li>Centralization of user privacy preferences</li><li>Ubiquity for accessing & altering user preferences</li><li>Clear limitation of purpose</li><li>Auditability</li></ul> | <ul><li>User experience</li></ul> |
+| #5 | Third-party entity | Identifier is generated and stored by a third-party independent entity at user sign-up time or consent time and can be shared across advertisers, publishers and tech vendors upon user choice | <ul><li>Centralization of user privacy preferences</li><li>Ubiquity for accessing & altering user preferences</li><li>Clear limitation of purpose</li><li>Auditability</li></ul> | <ul><li>Lesser user experience</li></ul> |
 
-Options 1, 3 and 4 seems difficult to scale and are therefore not detailed in this proposal.
+Options 1, 3 and 4 seems difficult to scale ; and option 2, although the most elegant, requires endorsement from browser vendors which is uncertain. Therefore are t we will detail option 5 in the following proposal.
 
-Even if option 2 has both significant alignement with our design principles, it requires strong support from browser vendors which is uncertain at this time.
-
-So, in the mean time, we believe that option 5 is a valuable option and we will focus on it in the following proposal.
 ## Proposal
 We introduce:
 * a revocable user identifier called Identifier For Advertising,
