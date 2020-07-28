@@ -198,8 +198,6 @@ The network provides controls to the user on my-advertising-services.com:
 * users can withdraw their consent to specific websites or all of them on my-advertising-services.com,
 * users can sever the link between their IFA and their email address on my-advertising-services.com, severing the link between their identity and any user interest data that has been collected.
 
-Here is an example of UI on the Network Controller website describing these controls and transparency proposals: 
-![controls](https://user-images.githubusercontent.com/4519242/88651704-3fc3f700-d0ca-11ea-889c-61ada07e345a.png)
 
 ## Benefits
 Users, first and foremost, are in control of her advertising experience:
