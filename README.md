@@ -86,93 +86,102 @@ Workflows differ from one another in terms of:
 
 Each network participant is free to choose which workflow(s) to implement on its website.
 
-#### Workflow #1: user is not authenticated on network participant and is not authenticated on the Network Controller
-<ins>Advertiser side</ins>:
-Suppose a user is a visitor of my-localstore.com, but choose not to have an account on this website or my-localstore.com doesn't require any authentication.
+<details>
+  <summary>Workflow #1: user is not authenticated on network participant and is not authenticated on the Network Controller</summary>
 
-When visiting my-localstore.com, the latter displays to the user a widget, freely positioned by the advertiser on its website, asking him whether he would be interested in getting personalized ads as part of my-advertising-services.com (sketch name for the website operated by the Network Controller). 
+  <ins>Advertiser side</ins>:
+  Suppose a user is a visitor of my-localstore.com, but choose not to have an account on this website or my-localstore.com doesn't require any authentication.
 
-If the user does not click on it, then the user continues visiting the website but will not get personalized ads from my-localstore.com.
+  When visiting my-localstore.com, the latter displays to the user a widget, freely positioned by the advertiser on its website, asking him whether he would be interested in getting personalized ads as part of my-advertising-services.com (sketch name for the website operated by the Network Controller). 
 
-If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising from my-localstore.com.
+  If the user does not click on it, then the user continues visiting the website but will not get personalized ads from my-localstore.com.
 
-The prompt clearly states that:
-* user interest data can be collected to perform personalized advertising,
-* ad preferences can be updated at any time,
-* user may leave the program at any time.
+  If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising from my-localstore.com.
 
-If the user accepts, then a first-party cookie with the IFA is created and stored by the Network Controller in the user's browser.
+  The prompt clearly states that:
+  * user interest data can be collected to perform personalized advertising,
+  * ad preferences can be updated at any time,
+  * user may leave the program at any time.
 
-This IFA is also passed to my-localstore.com, which can collect user interest data linked to this IFA. This provides to users a pseudonymous and temporary IFA relying on cookie lifetime.
+  If the user accepts, then a first-party cookie with the IFA is created and stored by the Network Controller in the user's browser.
 
-The storage in a first-party cookie is the most immediate way to move forward but we can imagine other storage solutions in the future (e.g. storage by the browser, cf. design options described above).
+  This IFA is also passed to my-localstore.com, which can collect user interest data linked to this IFA. This provides to users a pseudonymous and temporary IFA relying on cookie lifetime.
 
-![workflow_1_adv_fix](https://user-images.githubusercontent.com/4519242/88676397-4b281a00-d0ec-11ea-99ba-97c948378821.png)
+  The storage in a first-party cookie is the most immediate way to move forward but we can imagine other storage solutions in the future (e.g. storage by the browser, cf. design options described above).
 
-<ins>Publisher side</ins>:
-The user goes to my-news.com where he does not have an account either. Similarly to the user experience on my-localstore.com, my-news.com displays to the user a widget asking her whether she would be interested in getting personalized ads as part of my-advertising-services program. The widget is freely positioned by the publisher on its website.
+  ![workflow_1_adv_fix](https://user-images.githubusercontent.com/4519242/88676397-4b281a00-d0ec-11ea-99ba-97c948378821.png)
 
-If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising on my-news.com.
+  <ins>Publisher side</ins>:
+  The user goes to my-news.com where he does not have an account either. Similarly to the user experience on my-localstore.com, my-news.com displays to the user a widget asking her whether she would be interested in getting personalized ads as part of my-advertising-services program. The widget is freely positioned by the publisher on its website.
 
-If the user accepts, then a first-party cookie with the IFA is created and stored by the Network Controller in the user's browser (or retrieved if the user already went through this workflow with another network participant). This IFA is also passed to my-news.com, which can pass this identifier to the advertising value chain through ad bid request, enabling personalized advertising based on user interest on its property (for example, from my_localstore.com). The storage in a first-party cookie is the most immediate way to move forward but we can imagine other storage solutions in the future (e.g. storage by the browser).
+  If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising on my-news.com.
 
-![workflow_1_pub](https://user-images.githubusercontent.com/4519242/88651749-4ce0e600-d0ca-11ea-8a20-71745a50b6ca.png)
+  If the user accepts, then a first-party cookie with the IFA is created and stored by the Network Controller in the user's browser (or retrieved if the user already went through this workflow with another network participant). This IFA is also passed to my-news.com, which can pass this identifier to the advertising value chain through ad bid request, enabling personalized advertising based on user interest on its property (for example, from my_localstore.com). The storage in a first-party cookie is the most immediate way to move forward but we can imagine other storage solutions in the future (e.g. storage by the browser).
 
-#### Workflow 2: User is not authenticated on network participant and is authenticated on the Network Controller
-<ins>Advertiser side</ins>:
-Suppose a user is a visitor of my-localstore.com, but choose not to have an account on this website or my-localstore.com doesn't require any authentication.
+  ![workflow_1_pub](https://user-images.githubusercontent.com/4519242/88651749-4ce0e600-d0ca-11ea-8a20-71745a50b6ca.png)
+</details>
 
-When visiting my-localstore.com, the latter displays to the user a widget, freely positioned by the advertiser on its website, asking him whether he would be interested in getting personalized ads as part of my-advertising-services.com (sketch name for the website operated by the Network Controller). 
+<details>
+<summary>Workflow 2: User is not authenticated on network participant and is authenticated on the Network Controller</summary>
+  
+  <ins>Advertiser side</ins>:
+  Suppose a user is a visitor of my-localstore.com, but choose not to have an account on this website or my-localstore.com doesn't require any authentication.
 
-If the user does not click on it, then the user continues visiting the website but will not get personalized ads from my-localstore.com.
+  When visiting my-localstore.com, the latter displays to the user a widget, freely positioned by the advertiser on its website, asking him whether he would be interested in getting personalized ads as part of my-advertising-services.com (sketch name for the website operated by the Network Controller). 
 
-If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising from my-localstore.com.
+  If the user does not click on it, then the user continues visiting the website but will not get personalized ads from my-localstore.com.
 
-The prompt clearly states that:
-* user interest data can be collected to perform personalized advertising,
-* ad preferences can be updated at any time,
-* user may leave the program at any time.
+  If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising from my-localstore.com.
 
-If the user accepts, then the IFA associated with her Network Controller profile is retrieved. The IFA is also passed to my-localstore.com, which can collect user interest data linked to this IFA.
+  The prompt clearly states that:
+  * user interest data can be collected to perform personalized advertising,
+  * ad preferences can be updated at any time,
+  * user may leave the program at any time.
 
-![workflow_2_adv_fix](https://user-images.githubusercontent.com/4519242/88676405-4e230a80-d0ec-11ea-8588-9e9951058bf4.png)
+  If the user accepts, then the IFA associated with her Network Controller profile is retrieved. The IFA is also passed to my-localstore.com, which can collect user interest data linked to this IFA.
 
-<ins>Publisher side</ins>:
-The user goes to my-news.com where he does not have an account either. Similarly to the user experience on my-localstore.com, my-news.com displays to the user a widget asking her whether she would be interested in getting personalized ads as part of my-advertising-services program. The widget is freely positioned by the publisher on its website.
+  ![workflow_2_adv_fix](https://user-images.githubusercontent.com/4519242/88676405-4e230a80-d0ec-11ea-8588-9e9951058bf4.png)
 
-If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising on my-news.com.
+  <ins>Publisher side</ins>:
+  The user goes to my-news.com where he does not have an account either. Similarly to the user experience on my-localstore.com, my-news.com displays to the user a widget asking her whether she would be interested in getting personalized ads as part of my-advertising-services program. The widget is freely positioned by the publisher on its website.
 
-If the user accepts, then the IFA associated with her Network Controller profile is retrieved. This IFA is also passed to my-news.com, which can pass this identifier to the advertising value chain through ad bid request, enabling personalized advertising based on user interest on its property (for example, from my_localstore.com).
+  If the user clicks on it, then the user is redirected through a pop-up towards my-advertising-services.com where he is asked in a prompt to consent to personalized advertising on my-news.com.
 
-![workflow_2_pub](https://user-images.githubusercontent.com/4519242/88651787-5702e480-d0ca-11ea-8da0-1e61a7d4748c.png)
+  If the user accepts, then the IFA associated with her Network Controller profile is retrieved. This IFA is also passed to my-news.com, which can pass this identifier to the advertising value chain through ad bid request, enabling personalized advertising based on user interest on its property (for example, from my_localstore.com).
 
-#### Workflow 3: User is authenticated on network participant or is signing-up on network participant
-<ins>Advertiser side</ins> (example here: user is signing-up on network participant):
-Suppose a user is a regular browser of my-localstore.com, and is creating an account on this website. This workflow is integrated with the existing authentication on the website (either their own and/or an SSO).
+  ![workflow_2_pub](https://user-images.githubusercontent.com/4519242/88651787-5702e480-d0ca-11ea-8da0-1e61a7d4748c.png)
+</details>
 
-During the sign-up process on my-localstore.com, the user gets a prompt to accept personalized advertising with my-advertising-services.com program (sketch name for the website operated by the Network Controller).
+<details>
+<summary>Workflow 3: User is authenticated on network participant or is signing-up on network participant</summary>
+  
+  <ins>Advertiser side</ins> (example here: user is signing-up on network participant):
+  Suppose a user is a regular browser of my-localstore.com, and is creating an account on this website. This workflow is integrated with the existing authentication on the website (either their own and/or an SSO).
 
-The prompt clearly states that:
-* user interest data can be collected to perform personalized advertising,
-* ad preferences can be updated at any time,
-* user may leave the program at any time.
+  During the sign-up process on my-localstore.com, the user gets a prompt to accept personalized advertising with my-advertising-services.com program (sketch name for the website operated by the Network Controller).
 
-The user chooses to join the program. An IFA linked to the user email address is created and stored by the Network Controller. This IFA is passed to my-localstore.com's DSP, which can collect user interest data linked to this IFA.
+  The prompt clearly states that:
+  * user interest data can be collected to perform personalized advertising,
+  * ad preferences can be updated at any time,
+  * user may leave the program at any time.
 
-![workflow_3_adv](https://user-images.githubusercontent.com/4519242/88651823-6124e300-d0ca-11ea-8032-ed1ce92d2dfc.png)
+  The user chooses to join the program. An IFA linked to the user email address is created and stored by the Network Controller. This IFA is passed to my-localstore.com's DSP, which can collect user interest data linked to this IFA.
 
-<ins>Publisher side</ins> (example here: user is already authenticated on network participant):
-The user goes to my-news.com, and has already an account on this website.
+  ![workflow_3_adv](https://user-images.githubusercontent.com/4519242/88651823-6124e300-d0ca-11ea-8032-ed1ce92d2dfc.png)
 
-The user being already signed on my-news.com, my-news.com sends a request to the Network Controller, asking whether the user has already joined my-advertising-services.com. 
+  <ins>Publisher side</ins> (example here: user is already authenticated on network participant):
+  The user goes to my-news.com, and has already an account on this website.
 
-Answer is yes and the user gets a prompt asking whether she authorizes user interest data collection and personalized advertising from my-advertising-services.com on my-news.com.
+  The user being already signed on my-news.com, my-news.com sends a request to the Network Controller, asking whether the user has already joined my-advertising-services.com. 
 
-The user chooses to agree, and the IFA linked to the user email address that is shared by the Network Controller to my-news.com.
+  Answer is yes and the user gets a prompt asking whether she authorizes user interest data collection and personalized advertising from my-advertising-services.com on my-news.com.
 
-my-news.com can pass this identifier to advertisers through ad bid request, enabling personalized advertising based on user interest on its property.
+  The user chooses to agree, and the IFA linked to the user email address that is shared by the Network Controller to my-news.com.
 
-![workflow_3_pub](https://user-images.githubusercontent.com/4519242/88651836-65510080-d0ca-11ea-8d86-fcb6813ac12c.png)
+  my-news.com can pass this identifier to advertisers through ad bid request, enabling personalized advertising based on user interest on its property.
+
+  ![workflow_3_pub](https://user-images.githubusercontent.com/4519242/88651836-65510080-d0ca-11ea-8d86-fcb6813ac12c.png)
+</details>
 
 #### Coexistence of workflows in the Network
 Since each network participant is free to choose which workflow(s) to implement on its website, we foresee the coexistence of all those workflows in the Network. 
