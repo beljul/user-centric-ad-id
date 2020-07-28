@@ -107,7 +107,7 @@ This IFA is also passed to my-localstore.com, which can collect user interest da
 
 The storage in a first-party cookie is the most immediate way to move forward but we can imagine other storage solutions in the future (e.g. storage by the browser, cf. design options described above).
 
-![workflow_1_adv](https://user-images.githubusercontent.com/4519242/88651740-4b172280-d0ca-11ea-85e8-81f08d9f388d.png)
+![workflow_1_adv_fix](https://user-images.githubusercontent.com/4519242/88676397-4b281a00-d0ec-11ea-99ba-97c948378821.png)
 
 <ins>Publisher side</ins>:
 The user goes to my-news.com where he does not have an account either. Similarly to the user experience on my-localstore.com, my-news.com displays to the user a widget asking her whether she would be interested in getting personalized ads as part of my-advertising-services program. The widget is freely positioned by the publisher on its website.
@@ -135,7 +135,7 @@ The prompt clearly states that:
 
 If the user accepts, then the IFA associated with her Network Controller profile is retrieved. The IFA is also passed to my-localstore.com, which can collect user interest data linked to this IFA.
 
-![workflow_2_adv](https://user-images.githubusercontent.com/4519242/88651766-510d0380-d0ca-11ea-90bc-a2623d43db53.png)
+![workflow_2_adv_fix](https://user-images.githubusercontent.com/4519242/88676405-4e230a80-d0ec-11ea-8588-9e9951058bf4.png)
 
 <ins>Publisher side</ins>:
 The user goes to my-news.com where he does not have an account either. Similarly to the user experience on my-localstore.com, my-news.com displays to the user a widget asking her whether she would be interested in getting personalized ads as part of my-advertising-services program. The widget is freely positioned by the publisher on its website.
