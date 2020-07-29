@@ -6,12 +6,12 @@ Personalized advertising aims at fostering users' awareness of brands, products 
 This proposal for a user-centric advertising network, adopts the viewpoint that users should benefit from a vast, open and mostly free internet ecosystem in ways that cater to their individual preferences in terms of level of personalized interactions they seek to enjoy online, from each of the businesses they engage with.
 
 ## Design Principles
-We propose a design which grants full and easy control to the user to manage a revocable and editable privacy profile, with confidence their preferences are acted. upon.
+We propose a design which grants full and easy control to the user to manage a revocable and editable privacy profile, with confidence their preferences are acted.
 
 Our thinking is guided by 3 acknowledgements : 
-1/ As of today, online identity management is decentralized ; meaning each advertiser, publishers or tech vendor can create its own identity space, tying web browsing systems to anonymous identifiers. This fragmentation of identifiers generates friction with end users when it comes to personalized advertising, the users being unable to easily detach themselves from the array of identifiers that their web browsing could have been attached to nor are they able to get a perspective about their digital footprint. Fragmentation is creating obfuscation.
-2/ Although the identifiers are decentralized ; these identifiers can be stitched together and lead to the creation of rich web browsing profiles. Privacy issues do not come from identifiers being leaked but do arise when personal information or information that can create harm to its owner is exposed. It's the data that counts not the identifier.
-3/ There is no unique view of what constitutes privacy-safe browsing experience. Users preferences vary in the way each judge what is and what is not acceptable service. Users should be granted voice and choice about how they seek to enjoy their online activity.
+1. As of today, online identity management is decentralized ; meaning each advertiser, publishers or tech vendor can create its own identity space, tying web browsing systems to anonymous identifiers. This fragmentation of identifiers generates friction with end users when it comes to personalized advertising, the users being unable to easily detach themselves from the array of identifiers that their web browsing could have been attached to nor are they able to get a perspective about their digital footprint. Fragmentation is creating obfuscation.
+2. Although the identifiers are decentralized ; these identifiers can be stitched together and lead to the creation of rich web browsing profiles. Privacy issues do not come from identifiers being leaked but do arise when personal information or information that can create harm to its owner is exposed. It's the data that counts not the identifier.
+3. There is no unique view of what constitutes privacy-safe browsing experience. Users preferences vary in the way each judge what is and what is not acceptable service. Users should be granted voice and choice about how they seek to enjoy their online activity.
 
 With these in mind, the following principles guide our design:
 * centralization of user privacy preferences: the users’ privacy profile should be cross-browser/device/environment/OS,
@@ -25,17 +25,17 @@ Several designs were studied to enforce those principles. Each comes with its ow
 | Design options  | Identifier storage location | Description | Pros | Cons |
 |---|---|---|---|---|
 | #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Smooth user browsing experience</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear separation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
-| #2 | Browser | Identifier is created, stored and shared by browsers which acts as brokers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Clear separation of purpose</li><li>Auditability</li><li>Smooth user browsing experience</li></ul> | <ul><li>None</li></ul> |
+| #2 | Browser | Identifier is created, stored and shared by browsers which acts as brokers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Clear separation of purpose</li><li>Auditability</li><li>Smooth user browsing experience</li></ul> | <ul><li>No centralization of user privacy preferences (browser only)</li></ul> |
 | #3 | Browser plugin | Identifier is created, stored and shared by a browser's plugin installed manually by the end user | <ul><li>Centralization of user privacy preferences</li><li>Clear separation of purpose</li><li>Smooth user browsing experience</li><li>Auditability</li></ul> | <ul><li>Capacity to scale (require plugin-install)</li></ul> |
 | #4 | Identity providers | Identifier is created, stored and shared by Identity Providers and is linked to PII | <ul><li>Smooth user browsing experience</li><li>Clear separation of purpose</li><li>Auditability</li></ul> | <ul><li>Support required from all identity providers to manage an Identifier</li><li>Requirement for advertisers/publishers to adopt SSOs as login provider</li><li>Capacity to scale (PII-only)</li></ul> |
-| #5 | Third-party entity | Identifier is created and stored by a third-party independent entity at user sign-up time or consent time. Identifier can be shared across advertisers, publishers and tech vendors upon user choice | <ul><li>Centralization of user privacy preferences</li><li>Ubiquity for accessing & altering user preferences</li><li>Clear separation of purpose</li><li>Auditability</li></ul> | <ul><li>Lesser user experience</li></ul> |
+| #5 | Third-party entity | Identifier is created and stored by a third-party independent entity at user sign-up time or consent time. Identifier can be shared across advertisers, publishers and tech vendors upon user choice | <ul><li>Centralization of user privacy preferences</li><li>Ubiquity for accessing & altering user preferences</li><li>Clear separation of purpose</li><li>Auditability</li></ul> | <ul><li>Impact on user experience</li></ul> |
 
 Options 1, 3 and 4 seem difficult to scale ; option 2, although most elegant, requires endorsement from browser vendors which is uncertain at present time. Therefore, we will detail option 5 in the following proposal.
 
 ## Proposal
 We introduce:
 * a revocable user identifier called Identifier For Advertising,
-* a network of advertisers, publishers and ad tech companies (referred to as "the network" in the rest of this document),
+* a network of advertisers, publishers and ad tech companies (SSPs, DSPs): referred to as "the network" in the rest of this document,
 * ad preferences,
 * a central entity called Network Controller.
 
@@ -46,14 +46,17 @@ The Identifier For Advertising is a unique identifier that represents the end us
 
 It's a pseudonymous identifier (UUID) which has a finite lifetime and which can be revoked at any time by the user.
 
-#### Ad Preferences
+#### Ad preferences
 Ad Preferences are a set of controls attached to the Identifier For Advertising to manage their consent both at global and granular levels.
 
 The global level of controls enables/disables personalized advertising for the whole network.
 
 Granular levels of controls can be offered to users, for instance enabling/disabling personalized advertising for categories of publishers/advertisers or specific ones.
 
-#### Network Controller
+#### Network participants
+Network participants refer to advertisers and publishers which are part of the network. Ad tech companies (SSPs, DSPs) are also network members but are not included in "network participants" in the rest of this document.
+
+#### Network controller
 The Network Controller is an independent entity.
 
 End users can create an account on the Network Controller and access the following services :
@@ -191,9 +194,9 @@ Since each network participant is free to choose which workflow(s) to implement 
 The following tab describes the capacity of two workflows to enable identity resolution between an advertiser and a publisher when the are implemented respectively on each one:
 | Workflow ID | Advertiser | Publisher | ID controller | Personalized advertising |
 |---|---|---|---|---|
-| #1 | is authenticated and has consented | is authenticated and has consented | / | Enabled |
-| #2 | is authenticated and has consented | is authenticated and has NOT consented  | /  | Disabled  |
-| #3 | is authenticated and has NOT consented | is authenticated and has consented  | /  | Disabled  |
+| #1 | is authenticated and has consented | is authenticated and has consented | - | Enabled |
+| #2 | is authenticated and has consented | is authenticated and has NOT consented  | - | Disabled  |
+| #3 | is authenticated and has NOT consented | is authenticated and has consented  | -  | Disabled  |
 | #4 | is authenticated and has consented | has consented through redirection to ID controller  | is authenticated | Enabled  |
 | #5 | is authenticated and has consented | has consented through redirection to ID controller | is NOT authenticated | Disabled |
 | #6 | has consented through redirection to ID controller | is authenticated and has consented | is NOT authenticated | Disabled |
@@ -207,8 +210,7 @@ The network provides additional transparency to users on the portal my-advertisi
 The network provides controls to the user via the portal my-advertising-services.com:
 * users can choose independently for each network participant whether or not to agree to user interest data collection and personalized advertising. If the user does not consent, the IFA is not shared with the participant,
 * users can withdraw their consent to specific websites or all of them on my-advertising-services.com,
-* users can sever the link between their IFA and their email address on my-advertising-services.com, severing the link between their identity and any user interest data that has been collected.
-
+* users can revoke their IFA at any moment. It will sever the link between their IFA and their email address on my-advertising-services.com, severing the link between their identity and any user interest data that has been collected.
 
 ## Benefits
 Users, first and foremost, are in control of their advertising experience:
@@ -219,9 +221,9 @@ Users, first and foremost, are in control of their advertising experience:
 
 Publishers can optimize their inventory by monetizing access to their audience through personalized advertising:
 * publishers increase their advertising revenue, by combining their own audience data with collected user interest data,
+* publishers can control whether or not to share an IFA for an ad placement, and choose which part of their inventory will benefit from the IFA or not,
 * publishers decide with whom they share the identifier among the SSPs of the network, enabling them to monetize their own user data (tied to a user login for instance), if they choose to, without risking data leakage,
-* the management and collection of consent for each publisher is taken care of by the Network Controller, publishers can rely on their CMP to ensure user choices are effectively acted upon in the advertising value chain
-* publishers can control whether or not to share an IFA for an ad placement, and choose which part of their inventory will benefit from the IFA or not.
+* the management and collection of consent for each publisher is taken care of by the Network Controller, publishers can rely on their CMP to ensure user choices are effectively acted upon in the advertising value chain.
 
 Advertisers are able to engage with users in a personalized fashion:
 * advertisers can target users based on their individual interest data and propose products people like,
