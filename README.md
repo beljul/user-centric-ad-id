@@ -8,23 +8,24 @@ This proposal for a user-centric advertising network, adopts the viewpoint that 
 ## Design Principles
 We propose a design which grants full and easy control to the user to manage a revocable and editable privacy profile, with confidence their preferences are acted.
 
-Our thinking is guided by 3 acknowledgements : 
+Our thinking is guided by 4 acknowledgements : 
 1. As of today, online identity management is decentralized ; meaning each advertiser, publishers or tech vendor can create its own identity space, tying web browsing systems to anonymous identifiers. This fragmentation of identifiers generates friction with end users when it comes to personalized advertising, the users being unable to easily detach themselves from the array of identifiers that their web browsing could have been attached to nor are they able to get a perspective about their digital footprint. Fragmentation is creating obfuscation.
 2. Although the identifiers are decentralized ; these identifiers can be stitched together and lead to the creation of rich web browsing profiles. Privacy issues do not come from identifiers being leaked but do arise when personal information or information that can create harm to its owner is exposed. It's the data that counts not the identifier.
-3. There is no unique view of what constitutes privacy-safe browsing experience. Users preferences vary in the way each judge what is and what is not acceptable service. Users should be granted voice and choice about how they seek to enjoy their online activity.
+3. End users engage with various decentralized services. Each web service has its own digital, pseudonymous identity space and a subset of services also have user authentication that ties this ID to directly-identifiable IDs. End users should be granted a voice and choice about resetting the pseudonymous IDs and dissociating them from their directly-identifiable IDs, since people cannot easily change their directly-identifiable ID (e.g., name, email, phone number, home address). 
+4. There is no unique view of what constitutes privacy-safe browsing experience. Users preferences vary in the way each judge what is and what is not acceptable service. Users should be granted voice and choice about how they seek to enjoy their online activity.
 
 With these in mind, the following principles guide our design:
 * centralization of user privacy preferences: the users’ privacy profile should be cross-browser/device/environment/OS,
 * separation of purpose: identifier used for advertising use should not be the same as ones used for other purposes (say as a login to B2C services),
 * ubiquity for accessing & altering user preferences: users should be one click away to be able manage their preferences,
-* transparency and auditability: users choices enforceability and respect should be ensured.
+* transparency and auditability: enforceability of users’ choices and respect should be ensured.
 
 
 Several designs were studied to enforce those principles. Each comes with its own way of storing the user identifier and its own pros and cons:
 
 | Design options  | Identifier storage location | Description | Pros | Cons |
 |---|---|---|---|---|
-| #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors and based on PII | <ul><li>Smooth user browsing experience</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear separation of purpose</li><li>Capacity to scale (PII-only)</li><li>Few auditability</li></ul> |
+| #1 (current state) | Decentralized | Identifier is collected, stored and shared by each advertiser/publisher/vendors | <ul><li>Smooth user browsing experience</li></ul> | <ul><li>No centralization of user privacy preferences</li><li>No clear separation of purpose</li><li>Capacity to scale (PII-only)</li><li>Limited auditability</li></ul> |
 | #2 | Browser | Identifier is created, stored and shared by browsers which acts as brokers to publishers/advertisers/SSPs/DSPs | <ul><li>Centralization of user privacy preferences</li><li>Clear separation of purpose</li><li>Auditability</li><li>Smooth user browsing experience</li></ul> | <ul><li>No centralization of user privacy preferences (browser only)</li></ul> |
 | #3 | Browser plugin | Identifier is created, stored and shared by a browser's plugin installed manually by the end user | <ul><li>Centralization of user privacy preferences</li><li>Clear separation of purpose</li><li>Smooth user browsing experience</li><li>Auditability</li></ul> | <ul><li>Capacity to scale (require plugin-install)</li></ul> |
 | #4 | Identity providers | Identifier is created, stored and shared by Identity Providers and is linked to PII | <ul><li>Smooth user browsing experience</li><li>Clear separation of purpose</li><li>Auditability</li></ul> | <ul><li>Support required from all identity providers to manage an Identifier</li><li>Requirement for advertisers/publishers to adopt SSOs as login provider</li><li>Capacity to scale (PII-only)</li></ul> |
@@ -51,7 +52,9 @@ Ad Preferences are a set of controls attached to the Identifier For Advertising 
 
 The global level of controls enables/disables personalized advertising for the whole network.
 
-Granular levels of controls can be offered to users, for instance enabling/disabling personalized advertising for categories of publishers/advertisers or specific ones.
+Granular levels of controls can also be offered to users:
+* enable/disabling user interest data collection of future browsing sessions for specific advertisers, 
+* enable/disabling personalized advertising for specific publishers.
 
 #### Network participants
 Network participants refer to advertisers and publishers which are part of the network. Ad tech companies (SSPs, DSPs) are also network members but are not included in "network participants" in the rest of this document.
@@ -203,7 +206,7 @@ The following tab describes the capacity of two workflows to enable identity res
 | #7 | has consented through redirection to ID controller | has consented through redirection to ID controller | is NOT authenticated | Enabled  |
 
 ### User consent, transparency and controls
-Each network participant is responsible to collect the consent for user interest data collection and personalized advertising on their web domains. The network participant can choose at which rate the prompt to join the program should be displayed to the user, preventing user fatigue, or can even include an option "don't ask me again". Once a user has agreed to user interest data collection and personalized advertising on a network participant property, the consent is valid until revoked by that same user.
+Each network participant is responsible to collect the consent for user interest data collection and personalized advertising on their web domains. The network participant can choose at which rate the prompt to join the program should be displayed to the user, preventing user fatigue, or can even include an option "don't ask me again". Once a user has agreed to user interest data collection and personalized advertising on a network participant property, the consent is valid across different IDs assigned to different device/app until revoked.
 
 The network provides additional transparency to users on the portal my-advertising-services.com. In particular, users can review there at any time for which websites they have agreed to user interest data collection and personalized advertising.
 
