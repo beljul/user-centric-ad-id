@@ -31,7 +31,7 @@ Several designs were studied to enforce those principles. Each comes with its ow
 | #4 | Identity providers | Identifier is created, stored and shared by Identity Providers and is linked to PII | <ul><li>Smooth user browsing experience</li><li>Clear separation of purpose</li><li>Auditability</li></ul> | <ul><li>Support required from all identity providers to manage an Identifier</li><li>Requirement for advertisers/publishers to adopt SSOs as login provider</li><li>Capacity to scale (PII-only)</li></ul> |
 | #5 | Third-party entity | Identifier is created and stored by a third-party independent entity at user sign-up time or consent time. Identifier can be shared across advertisers, publishers and tech vendors upon user choice | <ul><li>Centralization of user privacy preferences</li><li>Ubiquity for accessing & altering user preferences</li><li>Clear separation of purpose</li><li>Auditability</li></ul> | <ul><li>Impact on user experience</li></ul> |
 
-Options 1, 3 and 4 seem difficult to scale ; option 2, although most elegant, requires endorsement from browser vendors which is uncertain at present time. Therefore, we will detail option 5 in the following proposal.
+Options 1, 3 and 4 seem difficult to scale ; option 2, although more elegant from a UX point of view, is only web-centric. On the opposite, option 5 can work on all environments (web, app,…etc), ensuring centralization of user privacy preferences. That’s why, we choose option 5 to design the solution detailed below. Please note that the latter focuses only on web environment for now but we aim at extending it to others (e.g. app, CTV, …etc).
 
 ## Proposal
 We introduce:
